@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MyFirstPrestaModule" default="build">
+
+	<!-- describe the way running phpunit & generate coverage -->
+	<target name="build" depends="prepare,phpunit" />
+	<target name="clean" description="Cleanup build artefacts">
+		<delete dir="${basedir}/build/coverage" />
+		<delete dir="${basedir}/build/logs" />
+	</target>
+
+	<target name="prepare" depends="clean,phpab" description="Prepare the build">
+		<mkdir dir="${basedir}/build/coverage" />
+		<mkdir dir="${basedir}/build/logs" />
+	</target>
+
+	<!-- describe the way to launch Php Autoloader script -->
+
+	<target name="phpab"
+		description="Generate Autoloader Script">
+		<exec executable="phpab">
+			<arg value="--output" />
+			<arg path="${basedir}/build/src/autoload.php" />
+			<arg value="--template" />
+			<arg path="${basedir}/build/src_autoload.php.in" />
+			<arg path="${basedir}/src" />
+		</exec>
+		
+		<exec executable="phpab">
+			<arg value="--output" />
+			<arg path="${basedir}/tests/autoload.php" />
+			<arg value="--template" />
+			<arg path="${basedir}/build/tests_autoload.php.in" />
+			<arg path="${basedir}/tests" />
+		</exec>
+	</target>
+
+	<!-- describe the way to luanch Phpunit -->
+	<target name="phpunit" description="Run unit test with Phpunit">
+		<exec executable="phpunit" failonerror="true" />
+	</target>
+
+	<!-- describe the way check syntax -->
+	<target name="lint">
+		<apply executable="php" failonerror="true">
+			<arg value="-l" />
+			<fileset dir="${basedir}/src">
+				<include name="**/*.php" />
+			</fileset>
+
+			<fileset dir="${basedir}/tests">
+				<include name="**/*.php" />
+			</fileset>
+		</apply>
+	</target>
+</project>
+			     
