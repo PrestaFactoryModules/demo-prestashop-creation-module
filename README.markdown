@@ -1,5 +1,7 @@
-<center>A pre-release architecture to create new Prestashop's Modules</center>
-<span style="color:rgb(150,100,220);font-style:italic">we are never working directly in master</span>
+A pre-release architecture to create new Prestashop's Modules
 
-<big>At Work :</big>
-<u>Integration of Jenkins</u>
+*we are never working directly in master*
+
+###<u>At Work :</u>
+####Integration of Jenkins
+  <small>*sam. 21 avril 2012 13:14:10 CEST *</small>
