@@ -1,0 +1,1 @@
+<center>A pre-release architecture to create new Prestashop's Modules</center>
