@@ -20,5 +20,6 @@ Still have a problem with ssh key when connect to github ... even after add ssh 
 
 
 ### install some Jenkins Extension
+build job to remote github with github extension 
 
 
