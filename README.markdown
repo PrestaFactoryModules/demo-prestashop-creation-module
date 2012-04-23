@@ -19,7 +19,19 @@ Still have a problem with ssh key when connect to github ... even after add ssh 
 [build.xml file](https://github.com/PrestaFactoryModules/demo-prestashop-creation-module/blob/IntegrationOfJenkins/build.xml)
 
 
-### install some Jenkins Extension
-build job to remote github with github extension 
+#### install some Jenkins Extension
+build job to remote github with github extension ... but cause always news problems !!! :( 
 
+But <u style="color:rgb(240,50,50);">WE Should Start from Sratch</u>
+
+### Running jenkins.war with winstone-hudson.jar
+When your're running Jenkins for the very first time, it initialize some values by default.
+But they could be change thanks your 'bash terminal' or a file !
+
+I've tried to run Jenkins by using .deb packages and 'apt-get'.
+[an upgrade from hudson in fact](https://wiki.jenkins-ci.org/display/JENKINS/Upgrading+from+Hudson+to+Jenkins) but didn't like the default '/var/lib/' path to install Jenkins and workspace ... and other kind of stuff!
+
+Never Mind ... it became quickly hard to manage permission user, shadows, etc instead of running my jobs, and github repositories collaboration.
+
+#### a step by step process to run Jenkins friendly
 
